@@ -4,14 +4,13 @@
 import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm'
 
 // --- 🔴 PASTE KEYS HERE 🔴 ---
-const SUPABASE_URL = 'https://zgrlpfxkobhomwfifbst.supabase.co';
-const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpncmxwZnhrb2Job213ZmlmYnN0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQxODIxNDgsImV4cCI6MjA3OTc1ODE0OH0.Bro0RZqhQLgxlJbfwQfv4XWvI4DTa_9zrWeZVRKv8Ww';
-
+const SUPABASE_URL = 'https://iilqukljunepfthqzrcg.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlpbHF1a2xqdW5lcGZ0aHF6cmNnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njk4OTk5NjgsImV4cCI6MjA4NTQ3NTk2OH0.D7ayp_USDWpWxh2uh4QRz_ar-HEmU3n2AsdYvNyr468'
 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
 // Constants
-const ROOM_ID = "KANPUR25";
-const ADMIN_PASS = "9936";
+const ROOM_ID = "PUNE26";
+const ADMIN_PASS = "7822";
 
 // Auth State
 let myUid = localStorage.getItem('meetup_uid');
@@ -165,7 +164,7 @@ function renderStudentUI(data) {
     // LOBBY
     if (data.mode === 'LOBBY') {
         title.innerText = "Chill Zone 🧊";
-        content.innerText = "Waiting for Ujjwal...";
+        content.innerText = "Waiting for Organiser ...";
     }
     // RNG
 // RNG Section
