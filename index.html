@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>MeetupOS ⚡</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="screen-login" class="screen active">
+        <div class="card login-card">
+            <h1>Who Dis? 🌚</h1>
+            <p id="device-id-display">ID: ...</p>
+            <input type="text" id="inp-name" placeholder="Your Name" autocomplete="off">
+            <input type="password" id="inp-code" placeholder="Room Code" autocomplete="off">
+            <button id="btn-login">JOIN PARTY 🚀</button>
+        </div>
+    
+
+        
+    </div>
+
+    <div id="screen-student" class="screen">
+        <div class="card student-card">
+            <h1 id="stu-title">Wait... 🐢</h1>
+            <div id="stu-content">Loading...</div>
+
+            <div id="stu-rng-choice" class="hidden">
+                <p>YOU have been chosen. Pick your poison.</p>
+                <div class="row">
+                    <button class="btn-blue" id="btn-choice-truth">TRUTH 😇</button>
+                    <button class="btn-red" id="btn-choice-dare">DARE 😈</button>
+                </div>
+            </div>
+
+            <div id="stu-confess-input" class="hidden">
+                <p id="confess-topic" class="topic-badge">Topic: Anything</p>
+                <textarea id="inp-confess" rows="3" placeholder="Spill the tea..."></textarea>
+                <button id="btn-confess-submit">SEND ANONYMOUSLY 🤫</button>
+            </div>
+
+            <div id="stu-guess-input" class="hidden">
+                <h2 id="timer-display" class="timer">30</h2>
+                <input type="number" id="inp-guess" placeholder="Your Number">
+                <button id="btn-guess-submit">LOCK IN 🔒</button>
+            </div>
+
+            <div id="stu-tribunal" class="hidden overlay-box">
+                <h3>JUDGE THEM ⚖️</h3>
+                <div class="row">
+                    <button class="btn-green" id="btn-vote-pass">👍 PASS</button>
+                    <button class="btn-red" id="btn-vote-fail">👎 FAIL</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="screen-admin" class="screen">
+        <div class="dashboard-grid">
+            
+                        <div class="dash-col">
+                <h3>CONTROLS</h3>
+                <button class="nav-btn btn-purple" data-mode="RNG">🎲 RNG</button>
+                <button class="nav-btn btn-purple" data-mode="GUESS">⚡ Over/Under</button>
+                <button class="nav-btn btn-purple" data-mode="CONFESS">🤫 Confess</button>
+                
+                <button class="btn-red" id="btn-reset-room">⏹ Reset Room</button>
+                
+                <hr>
+                <input type="file" id="json-upload" style="display:none">
+                <button class="btn-blue" onclick="document.getElementById('json-upload').click()">📂 Upload Questions</button>
+            </div>
+
+            <div class="dash-main">
+                <h2 id="admin-mode-title">LOBBY</h2>
+                
+                <div id="admin-ctrl-rng" class="admin-panel hidden">
+                    <div class="row">
+                        <button class="btn-green" id="btn-spin">🔄 SPIN WHEEL</button>
+                        <button class="btn-red" id="btn-force-reveal">⚠️ FORCE REVEAL</button>
+                    </div>
+                    <div class="result-box" id="admin-rng-display">Waiting to spin...</div>
+                    <hr>
+                    <div class="row">
+                        <button class="btn-purple" id="btn-tribunal-toggle">⚖️ START VOTING</button>
+                    </div>
+                    <div id="admin-vote-stats">Votes: 0 Pass / 0 Fail</div>
+                </div>
+
+                <div id="admin-ctrl-guess" class="admin-panel hidden">
+                    <div class="row">
+                        <button class="btn-blue" id="btn-best-3">Best of 3</button>
+                        <button class="btn-blue" id="btn-best-5">Best of 5</button>
+                    </div>
+                    <div class="result-box">
+                        <span id="admin-round-info">Round 0 / 0</span> </div>
+                    <button class="btn-green" id="btn-next-q">⚡ NEXT QUESTION</button>
+                    <button class="btn-purple" id="btn-calc-winner">🏆 CALC ROUND WINNER</button>
+                    <div id="admin-guess-display">...</div>
+                </div>
+
+                <div id="admin-ctrl-confess" class="admin-panel hidden">
+                    <div class="input-group">
+                        <input type="text" id="inp-theme" placeholder="Set New Theme (e.g. Mess Food)">
+                        <button class="btn-blue" id="btn-set-theme">SET</button>
+                    </div>
+                    <h3>INBOX (Tap to Broadcast)</h3>
+                    <div id="admin-confess-feed" class="scroll-feed">
+                        <div class="empty-msg">No confessions yet...</div>
+                    </div>
+                    <button class="btn-red" id="btn-clear-broadcast">❌ CLEAR BROADCAST</button>
+                </div>
+            </div>
+
+            <div class="dash-sidebar">
+                <h3>ONLINE (<span id="online-count">0</span>)</h3>
+                <div id="player-list" class="player-list">
+                    </div>
+            </div>
+
+        </div>
+    </div>
+<footer class="app-footer">
+        <div class="tagline-pill">✨ WE GATHER MOMENTS, NOT JUST PEOPLE. ✨</div>
+        <div class="footer-info">
+            <p>Made with 💓 by <b>Ujjwal (RC Lko Region)</b></p>
+            <p class="copyright">© 2025 All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script type="module" src="app.js"></script>
+</body>
+</html>

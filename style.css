@@ -1,0 +1,165 @@
+/* --- VARIABLES & RESET --- */
+:root {
+    --bg: #ffeaa7;
+    --card: #ffffff;
+    --text: #2d3436;
+    --border: #2d3436;
+    --accent: #fd79a8; /* Pink */
+    --blue: #0984e3;
+    --green: #00b894;
+    --red: #d63031;
+    --purple: #6c5ce7;
+    --gold: #fdcb6e;
+    --shadow: 5px 5px 0px var(--border);
+}
+
+* { box-sizing: border-box; }
+body {
+    font-family: 'Nunito', sans-serif;
+    background: var(--bg);
+    background-image: radial-gradient(var(--border) 1px, transparent 1px);
+    background-size: 20px 20px;
+    margin: 0; padding: 20px;
+    color: var(--text);
+    min-height: 100vh;
+}
+
+h1, h2, h3 { font-family: 'Fredoka One', cursive; margin: 0 0 10px 0; }
+.hidden { display: none !important; }
+
+/* --- SCREENS --- */
+.screen { display: none; width: 100%; height: 100%; }
+.screen.active { display: block; animation: popIn 0.3s ease-out; }
+
+@keyframes popIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+
+/* --- CARDS (Student View) --- */
+.card {
+    background: var(--card);
+    border: 3px solid var(--border);
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: var(--shadow);
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+input, textarea {
+    width: 100%; padding: 12px; margin-bottom: 10px;
+    border: 3px solid var(--border); border-radius: 8px;
+    background: #dfe6e9; font-family: inherit; font-weight: bold;
+}
+
+button {
+    width: 100%; padding: 12px; margin-bottom: 8px;
+    border: 3px solid var(--border); border-radius: 8px;
+    font-family: 'Fredoka One'; font-size: 1rem; cursor: pointer;
+    background: var(--accent); color: white;
+    box-shadow: 3px 3px 0 var(--border); transition: transform 0.1s;
+}
+button:active { transform: translate(2px, 2px); box-shadow: 0 0 0; }
+
+.btn-red { background: var(--red); }
+.btn-green { background: var(--green); }
+.btn-blue { background: var(--blue); }
+.btn-purple { background: var(--purple); }
+.btn-gold { background: var(--gold); color: black; }
+
+.row { display: flex; gap: 10px; }
+
+/* --- STUDENT SPECIFIC --- */
+.topic-badge { background: var(--purple); color: white; padding: 5px 10px; border-radius: 20px; display: inline-block; font-size: 0.9rem; margin-bottom: 10px; border: 2px solid var(--border); }
+.timer { font-size: 3rem; color: var(--red); margin: 10px 0; }
+.overlay-box { background: #fff; border: 3px solid var(--border); padding: 15px; border-radius: 10px; margin-top: 15px; }
+
+/* --- ADMIN DASHBOARD (Grid Layout) --- */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 200px 1fr 250px;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 90vh;
+}
+
+/* Responsive Admin (Stack on mobile) */
+@media (max-width: 900px) {
+    .dashboard-grid { grid-template-columns: 1fr; height: auto; }
+}
+
+.dash-nav, .dash-main, .dash-sidebar {
+    background: var(--card);
+    border: 3px solid var(--border);
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: var(--shadow);
+    overflow-y: auto;
+}
+
+.dash-nav h2 { font-size: 1.2rem; text-align: center; border-bottom: 2px dashed #ccc; padding-bottom: 10px; }
+.dash-sidebar h3 { font-size: 1rem; }
+
+/* Player List */
+.player-item {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 8px; border-bottom: 1px solid #eee; font-size: 0.9rem;
+}
+.player-item .status { width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: 5px; }
+.player-item .status.online { background: var(--green); }
+.player-item .status.offline { background: #b2bec3; }
+.action-btn { padding: 4px 8px; font-size: 0.7rem; width: auto; margin: 0; }
+
+/* Confession Feed */
+.scroll-feed { max-height: 300px; overflow-y: auto; background: #f1f2f6; border: 2px inset var(--border); padding: 10px; border-radius: 8px; }
+.confess-card {
+    background: white; border: 2px solid var(--border); padding: 10px; margin-bottom: 8px; border-radius: 6px; cursor: pointer; transition: 0.2s;
+}
+.confess-card:hover { background: var(--accent); color: white; }
+
+.result-box {
+    background: #dfe6e9; padding: 15px; border-radius: 8px; border: 2px dashed var(--border);
+    margin: 15px 0; font-weight: bold; text-align: center;
+}
+/* --- FOOTER STYLES --- */
+.app-footer {
+    margin-top: auto; /* Pushes footer to the bottom */
+    padding-top: 40px;
+    padding-bottom: 20px;
+    text-align: center;
+    width: 100%;
+    z-index: 10;
+}
+
+.tagline-pill {
+    background: var(--accent); /* Uses your Pink variable */
+    color: white;
+    font-family: 'Fredoka One', cursive;
+    padding: 12px 25px;
+    border: 3px solid var(--border);
+    border-radius: 50px;
+    display: inline-block;
+    box-shadow: 4px 4px 0 var(--border);
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transform: rotate(-1deg); /* Adds a fun tilt */
+    transition: transform 0.2s;
+}
+
+.tagline-pill:hover {
+    transform: rotate(1deg) scale(1.05);
+}
+
+.footer-info p {
+    margin: 4px 0;
+    font-size: 0.9rem;
+    color: var(--text);
+    font-weight: 600;
+}
+
+.footer-info .copyright {
+    font-size: 0.75rem;
+    opacity: 0.6;
+    font-weight: normal;
+}
