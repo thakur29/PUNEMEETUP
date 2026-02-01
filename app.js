@@ -4,8 +4,8 @@
 import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm'
 
 // --- 🔴 PASTE KEYS HERE 🔴 ---
-const SUPABASE_URL = 'https://iilqukljunepfthqzrcg.supabase.co';
-const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlpbHF1a2xqdW5lcGZ0aHF6cmNnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njk4OTk5NjgsImV4cCI6MjA4NTQ3NTk2OH0.D7ayp_USDWpWxh2uh4QRz_ar-HEmU3n2AsdYvNyr468'
+const SUPABASE_URL = 'https://dycpoeekjuwilzmsekwk.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImR5Y3BvZWVranV3aWx6bXNla3drIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njk5Mjg0NDUsImV4cCI6MjA4NTUwNDQ0NX0.V--Jen8cbQz4pIk-QR3jl_YEzGanyT04L7t3ue0bkiU'
 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
 // Constants
